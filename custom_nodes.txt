@@ -1,0 +1,19 @@
+# Custom nodes present on xintai (13 added + 2 already pre-installed in vastai/comfy):
+# Pre-installed in vastai/comfy:
+#   - ComfyUI-Manager
+#   - comfyui-workflow-to-api-converter-endpoint
+# Format: <dir_name>|<git_url>|<recursive:0|1>
+
+ComfyUI-Crystools|https://github.com/crystian/ComfyUI-Crystools|0
+ComfyUI-Easy-Use|https://github.com/yolain/ComfyUI-Easy-Use|1
+ComfyUI-Impact-Pack|https://github.com/ltdrdata/ComfyUI-Impact-Pack|0
+ComfyUI-Impact-Subpack|https://github.com/ltdrdata/ComfyUI-Impact-Subpack|0
+ComfyUI-KJNodes|https://github.com/kijai/ComfyUI-KJNodes|0
+ComfyUI-openpose-editor|https://github.com/huchenlei/ComfyUI-openpose-editor|0
+ComfyUI_UltimateSDUpscale|https://github.com/ssitu/ComfyUI_UltimateSDUpscale|1
+ComfyUI_essentials|https://github.com/cubiq/ComfyUI_essentials|0
+comfyui-art-venture|https://github.com/sipherxyz/comfyui-art-venture|0
+comfyui_controlnet_aux|https://github.com/Fannovel16/comfyui_controlnet_aux|0
+pre_cfg_comfy_nodes_for_ComfyUI|https://github.com/Extraltodeus/pre_cfg_comfy_nodes_for_ComfyUI|0
+rgthree-comfy|https://github.com/rgthree/rgthree-comfy|0
+was-node-suite-comfyui|https://github.com/WASasquatch/was-node-suite-comfyui|0

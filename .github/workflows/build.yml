@@ -1,0 +1,117 @@
+name: Build xintai ComfyUI Image
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_repo:
+        description: "Target lowercase image repo (empty = ghcr.io/<owner>/xintai-comfy)"
+        required: false
+        default: ""
+      image_tag:
+        description: "Image tag"
+        required: true
+        default: "v0.43.0-cuda13.2-py312-anima"
+      bake_models:
+        description: "Model baking profile"
+        type: choice
+        options:
+          - slim
+          - anima
+          - full
+        default: slim
+      lora_profile:
+        description: "LoRA profile (downloads from release v1-loras if available)"
+        type: choice
+        options:
+          - none
+          - xintai12
+          - anima
+          - all
+        default: all
+      lora_bundle_url:
+        description: "Optional HTTP URL to .tar.gz or .zip containing LoRA .safetensors"
+        required: false
+        default: ""
+      default_fetch_profile:
+        description: "Default FETCH_MODEL_PROFILE at boot (use anima or full for slim builds)"
+        type: choice
+        options:
+          - none
+          - anima
+          - full
+        default: anima
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Free disk space on GitHub runner
+        run: |
+          sudo swapoff -a || true
+          sudo rm -f /mnt/swapfile || true
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /usr/share/swift /opt/hostedtoolcache/CodeQL || true
+          docker system prune -af || true
+          df -h
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Normalize lowercase OCI repository name
+        id: meta
+        run: |
+          raw="${{ inputs.image_repo }}"
+          if [ -z "$raw" ]; then
+            raw="ghcr.io/${{ github.repository_owner }}/xintai-comfy"
+          fi
+          repo="$(printf '%s' "$raw" | tr '[:upper:]' '[:lower:]')"
+          echo "image_repo=${repo}" >> "$GITHUB_OUTPUT"
+          echo "Using image: ${repo}:${{ inputs.image_tag }}"
+
+      - name: Download LoRAs from Release v1-loras when needed
+        if: inputs.lora_profile != 'none' && inputs.lora_bundle_url == ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! ls loras/*.safetensors >/dev/null 2>&1; then
+            if gh release view v1-loras >/dev/null 2>&1; then
+              echo "Downloading LoRA assets from release v1-loras..."
+              gh release download v1-loras -D loras --clobber
+              ls -lh loras/
+            else
+              echo "::warning::Release v1-loras not found and no .safetensors in loras/. Falling back or failing inside Docker."
+            fi
+          fi
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GHCR (when targeting ghcr.io)
+        if: startsWith(steps.meta.outputs.image_repo, 'ghcr.io/')
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Login to Docker Hub (when secrets configured)
+        if: ${{ !startsWith(steps.meta.outputs.image_repo, 'ghcr.io/') && secrets.DOCKERHUB_USERNAME != '' }}
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.image_repo }}:${{ inputs.image_tag }}
+          build-args: |
+            BAKE_MODELS=${{ inputs.bake_models }}
+            LORA_PROFILE=${{ inputs.lora_profile }}
+            LORA_BUNDLE_URL=${{ inputs.lora_bundle_url }}
+            DEFAULT_FETCH_PROFILE=${{ inputs.default_fetch_profile }}

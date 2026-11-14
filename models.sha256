@@ -1,0 +1,11 @@
+# Group (core|diffusion|sdxl) | Relative path under /opt/model_store | SHA256 | HuggingFace repo/path
+# NOTE: RealESRGAN_x4plus_anime_6B, Qwen TE, and Qwen VAE are grouped as "core" so Docker layer size stays balanced.
+core|upscale_models/RealESRGAN_x4plus_anime_6B.pth|f872d837d3c90ed2e05227bed711af5671a6fd1c9f7d7e91c911a61f155e99da|amd/realesrgan-x4plus-anime-6b/resolve/main/RealESRGAN_x4plus_anime_6B.pth
+core|vae/qwen_image_vae.safetensors|a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f|circlestone-labs/Anima/resolve/main/split_files/vae/qwen_image_vae.safetensors
+core|text_encoders/qwen_3_06b_base.safetensors|cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba|circlestone-labs/Anima/resolve/main/split_files/text_encoders/qwen_3_06b_base.safetensors
+diffusion|diffusion_models/anima-turbo-v1.1.safetensors|fba11953276b57edf59d1dc4f1857ac05aa079c56f982b4d7c20298d57d3f7eb|circlestone-labs/Anima/resolve/main/split_files/diffusion_models/anima-turbo-v1.1.safetensors
+diffusion|diffusion_models/anima-aesthetic-v1.1.safetensors|3c1868387a3a1ff504bbb87c33678321965ead381fcf87afbd0264daa600c082|circlestone-labs/Anima/resolve/main/split_files/diffusion_models/anima-aesthetic-v1.1.safetensors
+diffusion|diffusion_models/anima-base-v1.0.safetensors|bd43b7cffe1ed1153d9c41e7beb2f18cb1273eafbaa3af3edd6a173dc90a006e|circlestone-labs/Anima/resolve/main/split_files/diffusion_models/anima-base-v1.0.safetensors
+sdxl_ckpt|checkpoints/NoobAI-XL-v1.1.safetensors|6681e8e4b134c81f16533acedb0d406d7e5e366e1624b4105178c64d00b05d51|Laxhar/noobai-XL-1.1/resolve/main/NoobAI-XL-v1.1.safetensors
+sdxl_cn|controlnet/controlnet++_union_sdxl_promax.safetensors|9fae2e50cb431bfcbe05822b59ec2228df545ef27f711dea8949e9f4ed9f7cdc|xinsir/controlnet-union-sdxl-1.0/resolve/main/diffusion_pytorch_model_promax.safetensors
+sdxl_cn|controlnet/noobaiXLControlnet_openposeModel.safetensors|918cfc4d7def165ea7a06bee10841fe525332515f8a0486c5cb2a171ec40b873|GSennin/controlnets/resolve/main/noobaiXLControlnet_openposeModel.safetensors

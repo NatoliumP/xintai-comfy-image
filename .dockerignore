@@ -1,0 +1,6 @@
+.git
+.github
+*.md
+*.ps1
+smoke_test.py
+loras/*.ps1

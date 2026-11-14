@@ -1,0 +1,4 @@
+# Large binary weights should use Git LFS, LORA_BUNDLE_URL, or scp for cloud builds
+loras/*.safetensors
+*.log
+__pycache__/
