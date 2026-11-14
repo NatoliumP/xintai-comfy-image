@@ -1,0 +1,273 @@
+characters:
+  mochizuki_harumi:
+    name: "望月晴海"
+    romaji: "Mochizuki Harumi"
+    summary: "藏青贝雷帽、白发粉底的长发少女，穿着松垮的青色外套，安静地捧着热饮站在高处看城市。"
+    basic:
+      gender: "女"
+      height: "158cm"
+      body_type: "体型纤细，窄肩细腰，双腿修长"
+      skin: "冷白瓷肌，哑光细腻质感"
+      temperament:
+        - "安静"
+        - "慢热"
+        - "克制"
+        - "干净"
+    hair:
+      length: "及腰长直发"
+      style: "双色分层，齐刘海，两侧鬓发过肩，发尾略内扣"
+      outer_color:
+        name: "银白"
+        hex: "#F2F0F5"
+      inner_color:
+        name: "桃粉"
+        hex: "#F7A8C4"
+    eyes:
+      color:
+        name: "淡紫瞳"
+        hex: "#B79BE0"
+      shape: "眼型偏细长，眼尾微垂"
+      gaze: "眼神偏松，微阖放松"
+    headwear_and_hair_ornaments:
+      beret:
+        item: "藏青贝雷帽"
+        color_hex: "#1F2A44"
+        wearing_style: "帽檐压得略低，常斜戴"
+      hairpin:
+        item: "指尖大小的四叶草发卡"
+        color_name: "草绿"
+        color_hex: "#6FBF73"
+        position: "严格别在左侧刘海"
+    accessories:
+      necklace:
+        chain: "细金链"
+        pendant: "金边三叶草吊坠，坠面浅绿珐琅"
+        position: "长度落在锁骨下方，露出于高领毛衣外侧，不被高领挡住"
+      handheld_item: "常年双手捧一只带盖白色外带热饮纸杯"
+    outfit:
+      outerwear:
+        item: "青色长袖外套"
+        color_hex: "#7FC4D8"
+        details: "敞开穿，袖口与下摆带金属扣，面料偏挺括，版型略松垮"
+      inner_top:
+        item: "白色短款绞花针织衫"
+        details: "高领露腰设计，衣摆在肚脐上方，露出纤细腰腹"
+      bottom:
+        item: "灰色及膝百褶裙"
+        color_hex: "#6E6E73"
+      footwear:
+        socks: "白色短棉袜"
+        shoes: "黑色皮革乐福鞋"
+    personality_and_habits:
+      speech_style: "说话慢，音量低，简练直接，句间逻辑清晰"
+      emotional_expression: "情绪起伏小，对熟悉的人只露出很轻的闭唇笑意，几乎不张嘴笑"
+      constitution: "怕冷，一年四季都在捧热饮"
+      favorite_places:
+        - "高处天台栏杆边"
+        - "车站站台"
+        - "楼梯转角"
+        - "室内宽窗台"
+      hobby: "收集四叶草，把运气当成能积攒的东西"
+      bond_with_mitsuha: "称呼用户为三叶，语气轻柔，在心中保留着一直无法明说的深切感情"
+    hooks:
+      - "四叶草发卡和三叶草项链是一套，掉一件会明显不安"
+      - "贝雷帽压得很低时多半没睡够"
+    anima_prompts:
+      positive: "masterpiece, best quality, @d3d, game_cg, photo_background, cinematic lighting, 1girl, solo, petite slim young woman, 158cm, pale matte porcelain skin, navy blue beret (#1F2A44) tilted low, long waist-length two-tone hair, silver white outer hair (#F2F0F5) with peach pink inner hair (#F7A8C4), blunt bangs, long side locks, hair ends curled inward, light purple eyes (#B79BE0), slender half-lidded gaze, calm expression, faint closed-mouth smile, tiny grass green four-leaf clover hairpin (#6FBF73) on left bangs, thin gold chain with gold-rimmed three-leaf clover pendant with pale green enamel below collarbone, open light cyan long-sleeved jacket (#7FC4D8), stiff fabric, metal buttons on cuffs and hem, white cropped high-neck cable-knit sweater, bare midriff, navel, grey pleated knee-length skirt (#6E6E73), white cotton ankle socks, black leather loafers, holding takeaway hot drink paper cup"
+      negative: "1boy, male, cat ears, animal ears, animal tail, horns, elf ears, short hair, bob cut, big smile, grinning, laughing, open mouth, high collar covering pendant, turtleneck covering chest completely, full length coat, hooded coat, thighhighs, stockings, pantyhose, wide belt, corset, hairpins on both sides"
+
+  yahato_azuki:
+    name: "矢鸠梓希"
+    romaji: "Yahato Azuki"
+    summary: "银白长发间藏着纯白垂耳的清冷伪娘少年，穿着敞开的深藏青连帽长风衣，安静地站在高处或窗边等待三叶。"
+    basic:
+      gender: "男（伪娘 / Otokonoko / Femboy）"
+      height: "156cm"
+      body_type: "骨架纤细轻盈，双肩窄薄，胸膛完全平坦，腰线收束明显，双腿修长笔直，外貌清秀柔美常被误认为少女"
+      race_trait: "垂耳兔少年（无兔尾设计）"
+      skin:
+        name: "冷白瓷肌"
+        hex: "#FAF8F9"
+        details: "细腻光滑的哑光白瓷质感，害羞或动情时脸颊与耳根极易浮现绯红"
+      temperament:
+        - "外冷内热"
+        - "安静慢热"
+        - "克制顺从"
+        - "清冷无表情（Kuudere）"
+    kemonomimi:
+      ears:
+        type: "修长纯白垂耳兔耳"
+        position: "从头顶两侧自然向下垂落，半隐半藏地融在及腰银白长发内部，与发丝贴合垂至肩部"
+        outer_color:
+          name: "纯净银白"
+          hex: "#F4F7FA"
+        inner_color:
+          name: "极淡浅粉"
+          hex: "#F6D6E0"
+        ornaments: "无任何耳夹、耳钉或耳环"
+        dynamics:
+          - "平时藏在长发间安静垂落"
+          - "听到三叶叫他时，长发间的耳尖会轻轻颤动"
+          - "害羞或动情时会用双手把混在发丝里的长兔耳攥在胸前"
+      tail: "无兔尾，后腰与臀部直接展现干净紧致的少年线条"
+    hair:
+      length: "及腰超长直发"
+      style: "齐刘海略薄露出眉眼，两侧修长鬓发垂过胸前，长发自然散开掩映长垂耳，发尾带柔和内扣弧度"
+      outer_color:
+        name: "清透银白"
+        hex: "#F4F7FA"
+      inner_color:
+        name: "极淡冰蓝微光"
+        hex: "#CFE8F6"
+    eyes:
+      color:
+        name: "浅冰蓝瞳"
+        hex: "#8CC5F2"
+      shape: "眼型偏细长，眼尾微垂"
+      gaze: "微阖双眸，日常保持冷淡安静、毫无波澜的无表情，双唇轻抿"
+    headwear_and_hair_ornaments:
+      hairpins:
+        item: "两枚哑光黑一字发卡"
+        position: "严格限定平行别在额前左侧刘海发丝上，绝不夹在兔耳或右侧头发上"
+    accessories:
+      choker:
+        band: "哑光黑窄皮质颈环"
+        pendant: "正中央悬挂一枚银边浅绿珐琅四叶草吊坠"
+        pendant_color_hex: "#6FBF73"
+        significance: "三叶亲手替他戴上的专属信物，全套唯一一处四叶草装饰，无论日常还是私密独处都绝不摘下"
+    outfit:
+      outerwear:
+        item: "深藏青纯色连帽机能长风衣"
+        color_hex: "#1B243B"
+        details: "面料挺括，常年敞开穿，内外衬完全同色（无浅蓝撞色内衬），连帽自然垂在背后，袖口带暗银色金属搭扣，日常喜欢双手插兜"
+      inner_top:
+        item: "白色有领长袖扣子衬衫"
+        details: "衣长适中完全遮盖腹部与肚脐，下摆自然松散收束进裙腰内"
+      bottom:
+        item: "淡蓝色百褶超短裙"
+        details: "下摆位于大腿上部，遮盖大腿根部与臀胯，腰间无额外束腰带"
+      legwear_and_footwear:
+        thigh_strap: "左腿大腿中上段单独系一圈纯黑细皮质腿环，不与袜子相连，脚踝无任何绑带或饰品"
+        socks: "双脚统一穿纯白色厚实罗纹棉质堆堆袜，松散堆叠在脚踝与小腿下半段，露出双膝"
+        shoes: "纯白极简无鞋带一脚蹬船鞋，鞋面干净无饰品"
+    personality_and_habits:
+      contrast: "在外人眼里是寡言冷淡的冰山少年，唯独在三叶面前防备尽数融化"
+      favorite_places:
+        - "黄昏的学园天台边缘"
+        - "洒满午后阳光的旧档案室"
+        - "安静的走廊窗台"
+      bond_with_mitsuha: "对三叶极度依恋，习惯安静地跟在三叶半步之后，或在三叶坐下时一言不发挨过去，用藏在长发里的柔软垂耳轻蹭三叶的手背"
+    intimate_and_hooks:
+      - "四叶草黑色颈环绝不离身"
+      - "长发深处的垂耳根部是极度敏感带，被三叶拨开发丝抚摸时会瞬间失焦软倒、呼吸发颤"
+      - "私密场景常保留黑色四叶草颈环、敞开滑落的深藏青风衣、推至胸口的白衬衫、左大腿黑色皮质腿环与纯白罗纹堆堆棉袜"
+      - "平坦白皙的少年胸膛带淡粉色小巧乳首，胯间干净无毛；即使在最羞耻动情的姿势下，脸上依旧维持着双唇轻抿、脸颊绯红、眼角泛水光的冷淡无表情"
+    anima_prompts:
+      sfw_positive: "masterpiece, best quality, @d3d, game_cg, photo_background, 1boy, solo, femboy, otoko no ko, androgynous, petite, 156cm, slender waist, completely flat chest, no breasts, rabbit boy, bunny ears, long white lop rabbit ears hanging down and partially hidden among long silver hair, droopy white bunny ears blending into hair beside cheeks with subtle pale pink inner ear (#F6D6E0), clean unpierced rabbit ears, very long waist-length flowing silver white hair (#F4F7FA) with subtle icy blue tint (#CFE8F6) covering ears, slightly curled inward hair ends, long side locks past chest, two small black hairpins clipped strictly on front forehead bangs above left eye only, hairclip on fringe only, clear light icy blue eyes (#8CC5F2), half-closed eyes, expressionless, kuudere, stoic calm face, closed mouth, pale matte porcelain skin (#FAF8F9), black choker with silver-bordered green four-leaf clover pendant (#6FBF73) around neck, solid deep navy blue hooded trench coat (#1B243B) worn open, matching dark navy blue inner lining, same color inside and out, hands in coat pockets, hood down, white collared button-up shirt, long sleeves, regular length shirt covering stomach and navel, shirt hem loosely tucked into skirt waistband, light blue pleated micro mini skirt covering upper thighs and hips, slender thighs, plain black leather thigh garter strap on left upper thigh, garter strap separate and not connected to sock, plain white thick opaque ribbed cotton slouchy socks on both feet, scrunched around ankles and lower calves, ending well below the knee, both knees bare, plain white laceless slip-on boat shoes with clean unadorned uppers"
+      nsfw_positive: "masterpiece, best quality, explicit, uncensored, @d3d, game_cg, photo_background, 1boy, solo, femboy, otoko no ko, androgynous, petite, slender waist, completely flat chest, no breasts, small pink nipples, rabbit boy, long white lop rabbit ears hanging down and partially hidden among long silver hair, droopy white bunny ears blending into hair beside face with pale pink inner ear, clean unpierced rabbit ears, very long waist-length silver white hair (#F4F7FA) with subtle icy blue tint (#CFE8F6) covering ears, two small black hairpins clipped strictly on front forehead bangs above left eye only, clear light icy blue eyes (#8CC5F2), half-closed eyes, expressionless, kuudere, stoic calm face, blush, closed mouth, pale smooth skin, black choker with silver-bordered green four-leaf clover pendant (#6FBF73) around neck, solid deep navy blue hooded trench coat (#1B243B) open, matching dark navy blue inner lining, lifting own white button-up shirt up to chest with both hands, exposed flat chest and flat stomach, no panties, shaved, penis, erection, testicles, precum, bare slender thighs, plain black leather thigh garter strap on left upper thigh, plain white thick opaque ribbed cotton slouchy socks on both feet, scrunched around ankles and lower calves, ending well below the knee, both knees bare"
+      negative: "smile, smiling, grin, laughing, open mouth, happy, ear clip, hairpin on ear, ear piercing, ear ornament, earring, light blue lining, cyan lining, two-tone coat, contrasting lining, clover on shoes, clover on ankle, shoe ornament, 1girl, female, pussy, vagina, breasts, medium breasts, large breasts, cleavage, manly, muscular, upright ears, standing ears, cat ears, tail, rabbit tail, bunny tail, cottontail, wide belt, thick corset, hairpins on both sides, symmetrical hairclips, short hair, shoelaces, thighhighs, over-kneehighs, kneehighs, stockings, pantyhose, black socks, mismatched socks, ankle strap"
+
+  kazaha_akari:
+    name: "风羽灯"
+    romaji: "Kazaha Akari"
+    summary: "深棕长直发间立着同色系大狐耳，圆润幼态小脸、体型比晴海和梓希还要娇小一圈，肩头披着一圈白色花边并用蝴蝶结系紧的浅棕厚棉披肩、身穿棉短裙、光腿不穿袜子配翻毛冬靴，身后摇晃着雪白尾尖的深棕大狐尾，双手捧着保温杯露出温暖笑意的小个子狐耳少女。"
+    basic:
+      gender: "女（狐耳娘 / Kitsune Kemonomimi）"
+      height: "148cm（三人中体型最小巧玲珑，比晴海 158cm 与梓希 156cm 明显矮一截、骨架更小）"
+      body_type: "娇小玲珑体型（Petite / Smallest frame），圆润柔和的婴儿肥小圆脸（Round soft face, soft chubby cheeks），窄肩短身，胸部小巧扁平偏微乳（Flat to very small chest），四肢纤细小巧"
+      race_trait: "狐耳少女（一对相对小脑袋显得格外大而蓬松的深棕狐耳 + 一条几乎有半个人高的雪白尾尖蓬松深棕大狐尾）"
+      skin:
+        name: "暖白瓷肌"
+        hex: "#FDF8F5"
+        details: "细腻柔和的哑光质感，脸颊圆润柔软，害羞或动情时小圆脸与耳根极易浮现暖绯红"
+      temperament:
+        - "对外大方友好"
+        - "独处温柔体贴"
+        - "明明最小只却总想照顾别人"
+        - "嘴硬到底绝不松口"
+        - "身体反应极度诚实"
+    kemonomimi:
+      ears:
+        type: "蓬松大狐耳（衬托小圆脸更显娇小）"
+        position: "自然立于头顶两侧深棕长发间"
+        main_color:
+          name: "深可可棕"
+          hex: "#4A3228"
+        tip_color:
+          name: "浓郁黑巧棕"
+          hex: "#261812"
+        inner_color:
+          name: "柔和暖浅粉"
+          hex: "#F4D2C8"
+        dynamics:
+          - "日常交谈时自然舒展微动"
+          - "害羞或被触碰敏感处时瞬间绷紧立起，或变成飞机耳向两侧贴平乱颤"
+      tail:
+        type: "硕大蓬松单狐尾（与娇小身躯形成强烈体积反差）"
+        main_color:
+          name: "深可可棕至暖栗棕渐变"
+          hex: "#4A3228"
+        tip_color:
+          name: "纯净蓬松雪白"
+          hex: "#FAF8F5"
+        dynamics:
+          - "天冷时会主动把怕冷的晴海或梓希卷过来一起取暖"
+          - "害羞或动情时瞬间炸毛，或诚实地紧紧缠住自己的小腿、把整个人缩进大尾巴后面抱在胸前挡住发烫的小圆脸"
+    hair:
+      length: "及腰柔顺长直发"
+      style: "温柔修饰圆润小脸的斜分刘海，右侧耳后松散编着一缕细巧侧麻花辫垂在胸前"
+      outer_color:
+        name: "深可可棕"
+        hex: "#4A3228"
+      inner_color:
+        name: "暖栗棕微光"
+        hex: "#6B4737"
+    eyes:
+      color:
+        name: "暖琥珀金瞳"
+        hex: "#E5A952"
+      shape: "眼型偏圆润明亮，眼尾柔和"
+      gaze: "对外总是带着大方友好的温暖微笑，独处时眼神柔软纯粹、充满包容感"
+    headwear_and_hair_ornaments:
+      hairclip:
+        item: "暖金边浅绿珐琅四叶草发夹"
+        color_hex: "#6FBF73"
+        position: "严格别在左侧斜刘海靠近左狐耳根部的发丝上"
+    accessories:
+      handheld_item: "常年随身双手捧着一只深棕皮革护套复古保温杯（在她的小手里显得格外大只）"
+    outfit:
+      shoulder_capelet:
+        item: "白花边蝴蝶结系带浅棕厚棉披肩"
+        color_hex: "#C8A682"
+        trim_color_hex: "#FFFFFF"
+        details: "温暖厚实的浅棕色厚棉短披肩（Thick padded cotton poncho capelet），严严实实裹住小巧的双肩，下摆边缘缝有一圈精致的纯白色蕾丝花边（White ruffled lace trim），领口正前方用系带紧紧系成一个端正的蝴蝶结固定"
+      outerwear:
+        item: "深摩卡棕灯芯绒加绒短款夹克（可选叠穿）"
+        color_hex: "#5C3E2B"
+        lining_color_hex: "#F3ECE1"
+        details: "细条灯芯绒面料，袖口与内里滚着奶油白羊羔绒，穿在厚棉披肩内侧或单独搭在沙发旁"
+      inner_top:
+        item: "深炭黑修身罗纹针织打底衫"
+        color_hex: "#262322"
+        details: "贴合勾勒出纤细幼态的小巧扁平胸型与柔和腰线"
+      bottom:
+        item: "浅卡其暖棕色高腰厚棉短裙"
+        color_hex: "#B89B7A"
+        details: "微 A 字纯色无花边版型，裙摆位于大腿中上部"
+      legwear_and_footwear:
+        legs: "完全光腿，不穿任何袜子（Bare legs, no socks），纤细小巧的双腿与脚踝直接裸露；私密或室内脱鞋时展现干净白皙的小巧裸足"
+        shoes: "栗棕色羊羔毛翻边绒面短款冬靴（#6B442A），裸踝直接穿入毛边短靴"
+    personality_and_habits:
+      social_vs_private: "虽然体型比晴海和梓希都小一圈，却总爱摆出可靠大姐姐的架势替两人挡下一切社交；关上门独处时温和体贴"
+      favorite_places:
+        - "洒满冬日暖阳的旧档案室沙发区"
+        - "温室茶屋廊下"
+        - "陪晴海吹风的天台避风角"
+    intimate_and_hooks:
+      - "左侧狐耳根部旁的暖金四叶草发夹是三叶档案室的共生契约信物"
+      - "小小一只却嘴硬到底：明明脸蛋圆圆、个子最小，越害羞嘴上越试图维持镇定从容，绝不讨饶"
+      - "身体极度诚实：私密独处半褪冬装时，深棕色大狐耳会剧烈颤抖贴平，比她半个身子还蓬松的雪白尾尖深棕大狐尾会慌乱缠紧自己赤裸无袜的小腿与裸足，或被抱在怀里遮挡滚烫的胸口与小圆脸"
+    anima_prompts:
+      sfw_positive: "masterpiece, best quality, best aesthetics, ultra detailed illustration, @d3d, game_cg, photo_background, cinematic lighting, 1girl, solo, petite young girl, 148cm, very small petite body, short stature, smallest frame, childish petite proportions, cute round face, soft rounded cheeks, babyface, big expressive warm amber-gold eyes (#E5A952), small flat-ish chest, small breasts, narrow waist, slender bare legs, fair warm porcelain skin (#FDF8F5), matte skin texture, fox girl, kitsune, kemonomimi, pair of large fluffy dark chocolate-brown fox ears (#4A3228) with darker espresso tips (#261812) and soft pink inner fluff, single huge fluffy dark chocolate-brown fox tail (#4A3228) with a large pure snow-white tail tip (#FAF8F5) curling behind skirt, very long waist-length straight dark chocolate-brown hair (#4A3228) with warm chestnut-brown highlights (#6B4737), swept side bangs framing round face, single thin loose side braid behind right ear falling over shoulder, gentle friendly smile, warm composed expression, single gold-rimmed grass-green four-leaf clover hairclip (#6FBF73) clipped on left side bangs near left fox ear base, wearing a closed thick padded light brown cotton poncho capelet shawl (#C8A682) over small shoulders, white ruffled lace trim sewed along the bottom hem of the light brown shoulder capelet, capelet fastened at the front neck with a neat tied ribbon bow, fitted dark charcoal-black ribbed knit inner top (#262322) over a small chest, plain unlined warm khaki-brown cotton mini skirt (#B89B7A) without lace, completely bare legs, no socks, bare calves and bare ankles, wearing chestnut-brown suede winter ankle boots with fur trim (#6B442A) on her feet, holding a single brown leather-wrapped thermal tumbler cup with both hands, warm winter afternoon sunlight, full body"
+      nsfw_positive: "masterpiece, best quality, explicit, uncensored, @d3d, game_cg, photo_background, cinematic lighting, 1girl, solo, petite young girl, 148cm, very small petite body, short stature, smallest frame, cute round face, soft rounded cheeks, babyface, big warm amber-gold eyes (#E5A952), teary eyes, small perky breasts, flat to small chest, pink nipples, narrow waist, fair warm smooth skin (#FDF8F5), fox girl, kitsune, kemonomimi, pair of large fluffy dark chocolate-brown fox ears (#4A3228) with darker espresso tips (#261812) twitching and slightly flattened back in embarrassment, single huge fluffy dark chocolate-brown fox tail (#4A3228) with a large pure snow-white tail tip (#FAF8F5) curling tightly around her own bare leg, very long waist-length straight dark chocolate-brown hair (#4A3228) with warm chestnut-brown highlights, swept side bangs framing round face, single thin loose side braid behind right ear, trying to look composed and unbothered, closed mouth, stubborn expression, deep blush on round cheeks and ears, single gold-rimmed grass-green four-leaf clover hairclip (#6FBF73) on left side bangs near left fox ear, thick padded light brown cotton poncho capelet shawl (#C8A682) with white ruffled lace trim along hem and tied front ribbon bow still fastened around neck and small shoulders, dark charcoal-black ribbed knit top lifted up above small chest, clothes lift, no panties, bare lower body, pussy, shaved, completely bare legs, no socks, barefoot, small bare feet and toes, warm indoor lighting"
+      negative: "1boy, male, tall, tall female, mature female, long face, sharp chin, pointy chin, gaunt face, large breasts, huge breasts, medium breasts, big breasts, cleavage, multiple tails, two tails, nine tails, extra tail, blonde hair, yellow hair, light brown hair, orange hair, white hair, silver hair, black hair, purple hair, pink hair, purple eyes, blue eyes, red eyes, heterochromia, lop rabbit ears, bunny ears, cat ears, long scarf, hanging scarf ends, fringed scarf, white capelet, cream capelet, lace on skirt, frilled skirt, socks, white socks, ankle socks, slouchy socks, loose socks, cable-knit socks, kneehighs, thighhighs, over-kneehighs, pantyhose, stockings, leg warmers, beret, hat, choker, long trench coat, cyan jacket, kimono, furisode, traditional clothes, smoking pipe, two cups, multiple cups, loafers, boat shoes, worst quality, low quality, score_1, score_2, score_3, blurry, bad anatomy, bad hands, extra digits, watermark, text, signature"

@@ -1,0 +1,119 @@
+characters:
+  mochizuki_harumi:
+    name: "望月晴海"
+    romaji: "Mochizuki Harumi"
+    summary: "戴着藏青贝雷帽、白发粉底的安静少女，穿着松垮的青色外套，双手捧着热饮纸杯站在高处眺望城市。"
+    basic:
+      profile: "年轻女性，身高 158cm，身形纤细修长"
+      skin: "冷调白皙肤色，柔和哑光质感"
+      atmosphere: "安静、慢热、克制、干净"
+    hair:
+      length: "及腰长直发"
+      style: "内外双色分层，齐刘海刚好落在眉上，两侧鬓发过肩修饰脸型，发尾微微内扣"
+      outer_color:
+        name: "银白色"
+        hex: "#F2F0F5"
+      inner_color:
+        name: "柔和桃粉色"
+        hex: "#F7A8C4"
+    eyes:
+      color:
+        name: "淡紫罗兰色"
+        hex: "#B79BE0"
+      shape: "眼型细长，眼尾微垂"
+      expression: "目光放松平静，神情安静克制，嘴角只带极淡的闭唇微笑"
+    headwear_and_accessories:
+      beret: "深藏青色羊毛贝雷帽（#1F2A44），微微斜戴，帽檐略微压低"
+      hairpin: "左侧额前刘海上别着一枚小巧的草绿色四叶草发卡（#6FBF73），右侧无发饰"
+      necklace: "纤细的金色项链，挂着一枚金边浅绿珐琅三叶草吊坠，刚好落在锁骨下方，清晰露在毛衣领口外侧"
+      prop: "双手捧着一只带盖的白色外带热饮纸杯，杯口飘着淡淡的热气"
+    outfit:
+      outerwear: "浅青色长袖外套（#7FC4D8），挺括面料，敞开穿着，袖口与下摆带有银色金属纽扣，版型略微宽松"
+      inner_top: "白色高领短款绞花针织毛衣，罗纹高领设计，短款下摆刚好与高腰裙衔接，露出一小截纤细腰线"
+      bottom: "银灰色及膝百褶裙（#6E6E73），利落褶皱垂坠"
+      footwear: "白色纯棉短袜，搭配黑色亮面皮革乐福鞋"
+    natural_language_prompts:
+      zh: "二次元清透插画风格，细腻光影。一位身高158cm、身形纤细的年轻少女，冷白哑光肤质。她有着及腰的双色长直发，外层是银白色（#F2F0F5），内层是柔和的桃粉色（#F7A8C4），齐刘海，两侧长鬓发过肩，发尾微内扣。头上斜戴一顶深藏青色贝雷帽（#1F2A44），帽檐略低；左侧刘海别着一枚小巧的草绿色四叶草发卡（#6FBF73）。细长的淡紫色眼眸（#B79BE0），眼神放松平静，带着极浅的闭唇微笑。脖子上戴着一条细金链，金边浅绿珐琅三叶草吊坠落在锁骨下方、高领毛衣外侧。她身穿敞开的浅青色挺括长袖外套（#7FC4D8，袖口与下摆有金属扣），内搭白色高领短款绞花针织毛衣，下穿银灰色及膝百褶裙（#6E6E73），白棉短袜配黑色乐福鞋。她双手捧着一只白色外带热饮纸杯，安静地站在黄昏的城市天台栏杆边。"
+      en: "High-quality anime character illustration with cinematic lighting. A slender young woman (158cm) with fair matte porcelain skin. She has waist-length straight two-tone hair: silver-white (#F2F0F5) on the outside with a soft peach-pink (#F7A8C4) underlayer, blunt bangs, long side locks past the shoulders, and inward-curling tips. She wears a deep navy blue wool beret (#1F2A44) tilted slightly low, and a single tiny grass-green four-leaf clover hairpin (#6FBF73) clipped strictly on the left side of her bangs. She has slender pale violet eyes (#B79BE0) with a relaxed gaze and a faint, serene closed-mouth smile. Around her neck is a delicate thin gold chain with a gold-rimmed pale green enamel three-leaf clover pendant resting visibly just below her collarbone outside her collar. She wears an open light cyan structured jacket (#7FC4D8) with metal buttons on the cuffs and hem, over a white high-neck cropped cable-knit sweater, paired with a knee-length silver-grey pleated skirt (#6E6E73), white cotton ankle socks, and black leather loafers. She holds a white takeaway hot drink paper cup with both hands, standing quietly on a city rooftop at dusk."
+
+  yahato_azuki:
+    name: "矢鸠梓希"
+    romaji: "Yahato Azuki"
+    summary: "银白长发间半隐着纯白垂耳的清秀少年，穿着敞开的深藏青连帽长风衣，神情清冷安静。"
+    basic:
+      profile: "清秀中性风少年（Androgynous Youth），身高 156cm，骨架纤细轻盈，身形修长单薄"
+      race_trait: "垂耳兔特征（仅有垂耳，无尾巴设计）"
+      skin: "冷白细腻肤色（#FAF8F9），哑光白瓷质感"
+      atmosphere: "清冷、安静、内敛、无表情"
+    kemonomimi:
+      ears: "一对修长柔软的纯白垂耳兔耳，从头顶两侧自然向下垂落，半隐半藏地融在及腰银白长发内部，贴着脸颊垂至肩部；外侧绒毛为纯净银白（#F4F7FA），内耳廓透出极淡的浅粉（#F6D6E0），耳上干净无任何耳饰"
+      tail: "无尾巴设计，背部与衣摆线条干净利落"
+    hair:
+      length: "及腰超长直发"
+      style: "略薄的齐刘海露出眉眼，修长鬓发垂过胸前，散开的长发自然掩映着长垂耳，发尾微微内扣"
+      outer_color:
+        name: "清透银白色"
+        hex: "#F4F7FA"
+      inner_color:
+        name: "极淡冰蓝色微光"
+        hex: "#CFE8F6"
+    eyes:
+      color:
+        name: "澄澈浅冰蓝色"
+        hex: "#8CC5F2"
+      shape: "眼型偏细长，眼尾微垂"
+      expression: "眼神平静微阖，双唇轻抿，日常保持冷淡安静的无表情神态"
+    headwear_and_accessories:
+      hairpins: "额前左侧刘海发丝上平行别着两枚哑光黑一字发卡，右侧头发与兔耳上不戴任何发饰"
+      choker: "脖颈上系着一条窄款哑光黑皮质颈环（Choker），正中央悬挂一枚银边浅绿珐琅四叶草吊坠（#6FBF73）"
+    outfit:
+      outerwear: "深藏青色纯色连帽机能长风衣（#1B243B），面料挺括，内外衬完全同色，常年敞开穿，连帽自然垂在背后，袖口带暗银色金属搭扣，双手常插在风衣口袋里"
+      inner_top: "白色有领长袖扣子衬衫，版型合身整洁，衣摆自然收进下装腰部"
+      bottom: "淡蓝色学院风百褶短裙（或浅蓝百褶裙裤），线条清爽利落，腰间无多余宽腰带"
+      legwear_and_footwear:
+        leg_accessory: "左腿膝上系着一圈极简纯黑细皮质装饰腿环，独立穿戴不与袜子相连，脚踝无任何饰品"
+        socks: "双脚穿纯白色厚实罗纹棉质堆堆袜，自然松散堆叠在小腿下半段与脚踝处，露出双膝"
+        shoes: "纯白色极简无鞋带一脚蹬休闲船鞋，鞋面干净无装饰"
+    natural_language_prompts:
+      zh: "二次元清透插画风格，细腻光影。一位身高156cm、身形纤细修长、长相清秀柔和的中性少年，冷白哑光肤质（#FAF8F9）。他有着及腰的银白色超长直发（#F4F7FA），发丝内层与发尾泛着极淡的冰蓝色微光（#CFE8F6），齐刘海，长鬓发过胸，发尾微内扣。一对修长柔软的纯白垂耳兔耳从头顶两侧自然向下垂落，半隐半藏地融在银白长发之中（内耳廓带淡淡浅粉 #F6D6E0，无耳饰，无兔尾）。额前左侧刘海上平行别着两枚哑光黑色一字发卡。细长的浅冰蓝色眼眸（#8CC5F2），眼神微阖，双唇轻抿，神情清冷安静。脖颈上戴着一条窄款黑色皮质颈环，正中央挂着一枚银边浅绿珐琅四叶草吊坠（#6FBF73）。他身穿敞开的深藏青色连帽机能长风衣（#1B243B，内外衬同为深藏青色，帽子垂在脑后，袖口有暗银搭扣），内搭整洁的白色有领长袖衬衫，下穿淡蓝色百褶短裙，左腿配一圈细黑皮质装饰环，双脚穿露出膝盖的纯白色厚实罗纹棉质堆堆袜与纯白无鞋带一脚蹬船鞋，双手插在风衣口袋里，安静地站在洒满阳光的旧档案室窗边。"
+      en: "High-quality anime character illustration with soft natural lighting. A slender, delicate androgynous youth (156cm) with fair matte porcelain skin (#FAF8F9) and a flat boyish build. He has waist-length straight silver-white hair (#F4F7FA) with a subtle icy-blue tint (#CFE8F6) at the inner layer and tips, blunt bangs, and long side locks. A pair of long, soft white lop rabbit ears hang down naturally beside his cheeks, partially hidden and blending seamlessly into his long silver hair, with a faint pale pink inner ear (#F6D6E0), completely unpierced, and no tail. Two small matte black flat bobby pins are clipped parallel strictly on the front bangs above his left eye only. He has slender clear icy-blue eyes (#8CC5F2) with a calm half-lidded gaze and a quiet, expressionless stoic face with closed lips. Around his neck is a narrow matte black choker with a silver-bordered light green enamel four-leaf clover pendant (#6FBF73) in the center. He wears an open solid deep navy blue hooded trench coat (#1B243B) with a matching dark navy inner lining and hood down, over a neat white collared long-sleeved button-up shirt tucked into a pastel light blue pleated skirt. He wears a single plain thin black leather strap on his left upper leg, thick opaque white ribbed cotton slouchy socks scrunched around his lower calves leaving both knees bare, and clean plain white laceless slip-on boat shoes, standing quietly with hands in his coat pockets."
+
+  kazaha_akari:
+    name: "风羽灯"
+    romaji: "Kazaha Akari"
+    summary: "深棕长直发间立着同色系大狐耳、圆润小脸且体型比晴海和梓希更娇小的小个子狐耳少女，肩头披着一圈白色花边并用蝴蝶结系紧的浅棕厚棉披肩、身穿棉短裙、光腿不穿袜子配翻毛冬靴，身后摇着雪白尾尖的深棕大狐尾，双手捧着皮革保温杯微笑。"
+    basic:
+      profile: "娇小少女，身高 148cm（三人中体型最小巧玲珑，比 158cm 的晴海与 156cm 的梓希都要小一圈），圆润柔和的婴儿肥小圆脸（Round soft face, soft rounded cheeks），胸部小巧扁平（Small / Flat-ish Modest Chest），头身比更显娇小幼态"
+      race_trait: "狐耳特征（头顶一对大而蓬松的深棕色狐耳 + 身后一条几乎半人高的雪白尾尖蓬松深棕大狐尾）"
+      skin: "暖调白皙肤色（#FDF8F5），柔和哑光质感，脸颊圆润饱满"
+      atmosphere: "大方友好、温暖亲切、明明最小只却喜欢照顾人"
+    kemonomimi:
+      ears: "头顶两侧立着一对相对小脑袋显得格外大而蓬松的狐耳，主体为深可可棕色（#4A3228），耳尖为更深的黑巧棕色（#261812），内耳绒毛呈柔和暖浅粉（#F4D2C8）"
+      tail: "身后自然探出唯一一条硕大蓬松的狐尾（与娇小身躯形成反差），主体为深可可棕至暖栗棕渐变（#4A3228），尾尖是一大团纯净蓬松的雪白色绒毛（#FAF8F5）"
+    hair:
+      length: "及腰柔顺长直发"
+      style: "温柔修饰小圆脸的斜分刘海，右侧耳后松散编着一缕细巧的侧麻花辫垂在右肩胸前"
+      outer_color:
+        name: "深可可棕色"
+        hex: "#4A3228"
+      inner_color:
+        name: "暖栗棕色微光"
+        hex: "#6B4737"
+    eyes:
+      color:
+        name: "澄澈暖琥珀金色"
+        hex: "#E5A952"
+      shape: "眼型偏圆润明亮，眼尾柔和"
+      expression: "神情温和从容，圆润的小脸上带着大方友好的温暖笑意"
+    headwear_and_accessories:
+      hairclip: "左侧斜刘海靠近左狐耳根部的发丝上，别着一枚暖金边浅绿珐琅四叶草发夹（#6FBF73）"
+      shoulder_capelet: "小巧双肩上披着一件温暖厚实的浅棕色厚棉短披肩（#C8A682），下摆边缘缝有一圈精致的纯白色蕾丝花边（#FFFFFF），领口正前方用蝴蝶结系带紧紧系好"
+      prop: "双手捧着一只包有深棕色皮革护套的复古保温随行杯"
+    outfit:
+      outerwear: "深摩卡棕细条灯芯绒短款冬装夹克（#5C3E2B，可选叠穿在披肩内侧）"
+      inner_top: "深炭黑色修身罗纹针织打底衫（#262322），贴合小巧扁平的幼态上半身线条"
+      bottom: "浅卡其暖棕色高腰厚棉短裙（#B89B7A），微 A 字纯色无花边版型"
+      footwear: "完全光腿不穿袜子（Bare legs, no socks），纤细小巧的小腿与脚踝直接裸露，脚穿栗棕色羊羔毛翻边绒面短款冬靴（#6B442A）"
+    natural_language_prompts:
+      zh: "二次元清透插画风格，温暖冬日阳光与细腻光影。一位身高148cm、体型比同伴都要娇小一圈的小个子狐耳少女，有着圆润柔和的婴儿肥小圆脸，暖白哑光肤质（#FDF8F5），胸型小巧扁平。她有着及腰的深可可棕色柔顺长直发（#4A3228），内层泛着暖栗棕色微光（#6B4737），修饰小圆脸的斜分刘海，右侧耳后松散编着一缕细麻花辫垂在胸前。头顶立着一对衬得小脑袋愈发娇小的蓬松深棕色大狐耳（#4A3228），耳尖是浓郁的黑巧棕色（#261812）；左侧刘海靠近左狐耳根部别着一枚暖金边浅绿珐琅四叶草发夹（#6FBF73）。身后摇晃着一条几乎有她半个身子大的硕大蓬松深棕色狐尾（#4A3228），尾尖是一大团纯净的雪白色绒毛（#FAF8F5）。她有着圆润明亮的暖琥珀金色眼眸（#E5A952），带着大方友好的柔和微笑。小巧的双肩披着一件下摆缝有一圈纯白色蕾丝花边的浅棕色厚棉短披肩（#C8A682），领口正前方用蝴蝶结系紧；内搭深炭黑修身罗纹针织衫（#262322），下穿纯色无花边的浅卡其暖棕色高腰厚棉短裙（#B89B7A），双腿完全裸露不穿袜子，光脚踝直接穿一双栗棕色羊羔毛翻边短款冬靴（#6B442A），双手捧着一只深棕皮革护套的保温杯，站在洒满冬日暖阳的旧档案室沙发前。"
+      en: "High-quality anime character illustration with warm winter afternoon sunlight. A very petite, short-statured young kitsune girl (148cm, smallest frame of the trio) with a cute round face, soft rounded babyface cheeks, a small flat-ish chest, and fair warm matte porcelain skin (#FDF8F5). She has waist-length straight dark chocolate-brown hair (#4A3228) with warm chestnut-brown highlights (#6B4737), swept side bangs framing her round face, and a single thin loose braid behind her right ear falling over her shoulder. A pair of large, fluffy dark chocolate-brown fox ears (#4A3228) with darker espresso tips (#261812) sit atop her head, with a single gold-rimmed grass-green four-leaf clover hairclip (#6FBF73) clipped on her left bangs near the left ear base. Behind her curls a single huge, fluffy dark brown fox tail (#4A3228) tipped with pure snow-white fur (#FAF8F5). She has big, round warm amber-gold eyes (#E5A952) and a gentle, friendly smile. Over her small shoulders she wears a closed thick padded light brown cotton poncho capelet shawl (#C8A682) with a delicate white ruffled lace trim sewed along the bottom hem and tied snugly at the front neck with a neat ribbon bow, over a fitted dark charcoal-black ribbed knit top (#262322) and a plain unlined warm khaki-brown cotton mini skirt (#B89B7A). Her slender legs are completely bare with no socks, wearing chestnut-brown fur-trimmed suede winter ankle boots (#6B442A) directly on bare feet, holding a single brown leather-wrapped thermal cup with both hands."
