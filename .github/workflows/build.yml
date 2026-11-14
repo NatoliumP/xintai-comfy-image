@@ -78,8 +78,10 @@ jobs:
         run: |
           if ! ls loras/*.safetensors >/dev/null 2>&1; then
             if gh release view v1-loras >/dev/null 2>&1; then
-              echo "Downloading LoRA assets from release v1-loras..."
-              gh release download v1-loras -D loras --clobber
+              echo "Downloading xintai-loras-v1.tar from release v1-loras..."
+              gh release download v1-loras -p "xintai-loras-v1.tar" -D /tmp --clobber
+              tar -xf /tmp/xintai-loras-v1.tar -C loras
+              rm -f /tmp/xintai-loras-v1.tar
               ls -lh loras/
             else
               echo "::warning::Release v1-loras not found and no .safetensors in loras/. Falling back or failing inside Docker."

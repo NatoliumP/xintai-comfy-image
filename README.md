@@ -46,7 +46,7 @@ bash build.sh
 ### 方式 B：使用 GitHub Actions (`.github/workflows/build.yml`)
 
 GitHub 免费 `ubuntu-latest` runner 清理后可用磁盘约 35–42 GB，工作流默认选用 `bake_models=slim` + `default_fetch_profile=anima`（若磁盘足够也可选 `anima`）：
-- 工作流会自动把 `ghcr.io` 仓库名转为全小写，并支持从私有仓库 Release **`v1-loras`** 自动下载 14 个 LoRA（若不存在亦可传入外部 `lora_bundle_url` 或改选 `lora_profile=none`）。
+- 工作流会自动把 `ghcr.io` 仓库名转为全小写，并支持从私有仓库 Release **`v1-loras`**（`xintai-loras-v1.tar`）自动下载并还原 14 个 LoRA（若不存在亦可传入外部 `lora_bundle_url` 或改选 `lora_profile=none`）。
 - 构建产物默认推送至 `ghcr.io/<owner>/xintai-comfy`。
 
 ## 4. Vast.ai 运行配置建议
