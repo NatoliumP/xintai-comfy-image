@@ -79,6 +79,76 @@ if [[ "${torch_pre_only}" != "${torch_versions_post}" ]]; then
     exit 1
 fi
 
+# Patch comfyui-art-venture load_module so it reuses already-loaded custom nodes in sys.modules
+# instead of re-executing them under a different module name (which duplicates PromptServer routes).
+ART_VENTURE_UTILS="${CUSTOM_NODES_DIR}/comfyui-art-venture/modules/utils.py"
+if [[ -f "${ART_VENTURE_UTILS}" ]]; then
+    python - "${ART_VENTURE_UTILS}" <<'PY'
+import pathlib
+import sys
+
+path = pathlib.Path(sys.argv[1])
+src = path.read_text(encoding="utf-8")
+marker = "# patched: reuse sys.modules to avoid duplicate custom_node routes"
+if marker in src:
+    print(f"[nodes] {path} already patched")
+    raise SystemExit(0)
+
+old_block = """def load_module(module_path, module_name=None):
+    import importlib.util
+
+    if module_name is None:
+        module_name = os.path.basename(module_path)
+        if os.path.isdir(module_path):
+            module_path = os.path.join(module_path, "__init__.py")
+
+    module_spec = importlib.util.spec_from_file_location(module_name, module_path)
+
+    module = importlib.util.module_from_spec(module_spec)
+    module_spec.loader.exec_module(module)
+
+    return module"""
+
+new_block = """def load_module(module_path, module_name=None):
+    import importlib.util
+    # patched: reuse sys.modules to avoid duplicate custom_node routes
+    orig_path = os.path.abspath(module_path)
+    if module_name is None:
+        if os.path.isdir(orig_path):
+            module_name = orig_path.replace(".", "_x_")
+            module_path = os.path.join(orig_path, "__init__.py")
+        else:
+            module_name = os.path.splitext(orig_path)[0]
+    elif os.path.isdir(orig_path):
+        module_path = os.path.join(orig_path, "__init__.py")
+
+    target_real = os.path.realpath(module_path)
+    existing = sys.modules.get(module_name)
+    if existing is None:
+        for mod in list(sys.modules.values()):
+            mod_file = getattr(mod, "__file__", None)
+            if mod_file and os.path.realpath(mod_file) == target_real:
+                existing = mod
+                break
+    if existing is not None:
+        return existing
+
+    module_spec = importlib.util.spec_from_file_location(module_name, module_path)
+
+    module = importlib.util.module_from_spec(module_spec)
+    sys.modules[module_name] = module
+    module_spec.loader.exec_module(module)
+
+    return module"""
+
+if old_block not in src:
+    raise SystemExit(f"[nodes] ERROR: expected load_module block not found in {path}")
+
+path.write_text(src.replace(old_block, new_block, 1), encoding="utf-8")
+print(f"[nodes] Patched {path} (load_module deduplication)")
+PY
+fi
+
 rm -f "${CUSTOM_NODES_DIR}/skip_download_model" /tmp/torch-constraints.txt "${COMBINED_REQ}"
 
 echo "[nodes] Running ComfyUI CI quick smoke test..."
