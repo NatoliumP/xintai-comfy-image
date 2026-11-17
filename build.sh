@@ -3,15 +3,15 @@ set -euo pipefail
 
 # Build helper for Linux/cloud Docker or Buildah 1.33 hosts.
 # Examples:
-#   TAG=ghcr.io/youruser/xintai-comfy:v0.43.0-anima ./build.sh
+#   TAG=ghcr.io/youruser/xintai-comfy:v0.43.0-anima-turbo ./build.sh
 #   BAKE_MODELS=full TAG=docker.io/youruser/xintai-comfy:v0.43.0-full PUSH=1 ./build.sh
 #   USE_CN_MIRRORS=1 BAKE_MODELS=anima TAG=youruser/xintai-comfy:latest ./build.sh
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${SCRIPT_DIR}"
 
-TAG="${TAG:-xintai-comfy:v0.43.0-cuda13.2-py312}"
-BAKE_MODELS="${BAKE_MODELS:-anima}"
+TAG="${TAG:-xintai-comfy:v0.43.0-cuda13.2-py312-anima-turbo}"
+BAKE_MODELS="${BAKE_MODELS:-anima-turbo}"
 LORA_PROFILE="${LORA_PROFILE:-all}"
 LORA_BUNDLE_URL="${LORA_BUNDLE_URL:-}"
 DEFAULT_FETCH_PROFILE="${DEFAULT_FETCH_PROFILE:-none}"

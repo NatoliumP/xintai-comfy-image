@@ -26,12 +26,28 @@ EXPECTED_NODES = {
     "was-node-suite-comfyui",
 }
 
-EXPECTED_LIVE_MODELS = {
-    "anima-turbo-v1.1.safetensors",
-    "anima-aesthetic-v1.1.safetensors",
-    "anima-base-v1.0.safetensors",
-    "qwen_3_06b_base.safetensors",
-    "qwen_image_vae.safetensors",
+EXPECTED_LIVE_MODELS_BY_PROFILE = {
+    "anima-turbo": {
+        "anima-turbo-v1.1.safetensors",
+        "qwen_3_06b_base.safetensors",
+        "qwen_image_vae.safetensors",
+    },
+    "anima": {
+        "anima-turbo-v1.1.safetensors",
+        "anima-aesthetic-v1.1.safetensors",
+        "anima-base-v1.0.safetensors",
+        "qwen_3_06b_base.safetensors",
+        "qwen_image_vae.safetensors",
+    },
+    "full": {
+        "anima-turbo-v1.1.safetensors",
+        "anima-aesthetic-v1.1.safetensors",
+        "anima-base-v1.0.safetensors",
+        "qwen_3_06b_base.safetensors",
+        "qwen_image_vae.safetensors",
+        "NoobAI-XL-v1.1.safetensors",
+    },
+    "slim": set(),
 }
 
 
@@ -158,7 +174,8 @@ def check_offline(root: Path, verify_lora_hashes: bool) -> int:
     return 0
 
 
-def check_live(url: str) -> int:
+def check_live(url: str, profile: str = "anima-turbo") -> int:
+    expected = EXPECTED_LIVE_MODELS_BY_PROFILE.get(profile, set())
     base = url.rstrip("/")
     stats = json.loads(urllib.request.urlopen(f"{base}/system_stats", timeout=10).read().decode())
     sys_info = stats.get("system", {})
@@ -177,9 +194,9 @@ def check_live(url: str) -> int:
 
     print(f"Live models: unets={len(unet_vals)}, clips={len(clip_vals)}, vaes={len(vae_vals)}, loras={len(lora_vals)}")
     found_core = unet_vals | clip_vals | vae_vals
-    missing = EXPECTED_LIVE_MODELS - found_core
+    missing = expected - found_core
     if missing:
-        print("LIVE CHECK FAILED: missing models:", sorted(missing))
+        print(f"LIVE CHECK FAILED (profile={profile}): missing models:", sorted(missing))
         return 1
 
     # Spot-check custom nodes loaded into ComfyUI registry
@@ -194,13 +211,15 @@ def main() -> int:
     ap.add_argument("--offline", action="store_true", help="Validate local repo files and manifests")
     ap.add_argument("--verify-hashes", action="store_true", help="Recompute SHA256 on all files in loras/")
     ap.add_argument("--url", help="Verify running ComfyUI endpoint, e.g. http://127.0.0.1:18188")
+    ap.add_argument("--profile", default="anima-turbo", choices=sorted(EXPECTED_LIVE_MODELS_BY_PROFILE),
+                    help="Baked model profile the image was built with (affects live model expectations)")
     args = ap.parse_args()
 
     rc = 0
     if args.offline or not args.url:
         rc |= check_offline(Path(__file__).resolve().parent, args.verify_hashes)
     if args.url:
-        rc |= check_live(args.url)
+        rc |= check_live(args.url, args.profile)
     return rc
 
 

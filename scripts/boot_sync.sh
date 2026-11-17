@@ -16,7 +16,7 @@ mkdir -p "${COMFY_DIR}/models" "${COMFY_DIR}/user/default/workflows"
 case "${FETCH_PROFILE}" in
     none|"")
         ;;
-    anima|full|sdxl_ckpt|sdxl_cn|core|diffusion)
+    anima|anima-turbo|anima_turbo|full|sdxl_ckpt|sdxl_cn|core|turbo|diffusion)
         if [[ ! -f "${COMFY_DIR}/.xintai_fetched_${FETCH_PROFILE}" ]]; then
             echo "[xintai-sync] Fetching missing models for profile=${FETCH_PROFILE}..."
             /opt/xintai/download_models.sh "${FETCH_PROFILE}" "${COMFY_DIR}/models"

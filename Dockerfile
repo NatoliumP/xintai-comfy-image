@@ -6,9 +6,10 @@
 #     comfyui-api-wrapper (:18288), Jupyter (:8080), v1-5-pruned-emaonly-fp16.safetensors
 #
 # Build modes (ARG BAKE_MODELS):
-#   slim   - Custom nodes + LoRAs + workflows only (~11 GB); fetch models on boot via FETCH_MODEL_PROFILE
-#   anima  - Default: + Anima turbo/aesthetic/base + Qwen 3 0.6B + Qwen VAE + RealESRGAN (~22 GB)
-#   full   - Exact 1:1 mirror including NoobAI-XL v1.1 + 2x SDXL ControlNets (~34 GB)
+#   slim        - Custom nodes + LoRAs + workflows only (~11 GB); fetch models on boot via FETCH_MODEL_PROFILE
+#   anima-turbo - Recommended: + anima-turbo-v1.1 + Qwen 3 0.6B + Qwen VAE + RealESRGAN (~16 GB, zero boot download)
+#   anima       - Default: + Anima turbo/aesthetic/base + Qwen 3 0.6B + Qwen VAE + RealESRGAN (~22 GB)
+#   full        - Exact 1:1 mirror including NoobAI-XL v1.1 + 2x SDXL ControlNets (~34 GB)
 
 ARG BASE_IMAGE=vastai/comfy:v0.43.0-cuda-13.2-py312
 FROM ${BASE_IMAGE}
@@ -52,11 +53,16 @@ RUN PIP_INDEX_URL_ARG="${PIP_INDEX_URL_ARG}" \
     /opt/xintai/install_custom_nodes.sh /opt/xintai/custom_nodes.txt
 
 # 4. Model layer A: Qwen text encoder + Qwen VAE + RealESRGAN anime 4x upscaler (~1.46 GB)
-RUN if [ "${BAKE_MODELS}" = "anima" ] || [ "${BAKE_MODELS}" = "full" ]; then \
+RUN if [ "${BAKE_MODELS}" = "anima-turbo" ] || [ "${BAKE_MODELS}" = "anima" ] || [ "${BAKE_MODELS}" = "full" ]; then \
         HF_ENDPOINT="${HF_ENDPOINT_ARG}" /opt/xintai/download_models.sh core; \
     fi
 
-# 5. Model layer B: Anima diffusion models (turbo-v1.1 + aesthetic-v1.1 + base-v1.0, ~12.5 GB)
+# 5a. Model layer B1: anima-turbo-v1.1 (~3.9 GB)
+RUN if [ "${BAKE_MODELS}" = "anima-turbo" ] || [ "${BAKE_MODELS}" = "anima" ] || [ "${BAKE_MODELS}" = "full" ]; then \
+        HF_ENDPOINT="${HF_ENDPOINT_ARG}" /opt/xintai/download_models.sh turbo; \
+    fi
+
+# 5b. Model layer B2: Anima aesthetic-v1.1 + base-v1.0 (~8.4 GB)
 RUN if [ "${BAKE_MODELS}" = "anima" ] || [ "${BAKE_MODELS}" = "full" ]; then \
         HF_ENDPOINT="${HF_ENDPOINT_ARG}" /opt/xintai/download_models.sh diffusion; \
     fi

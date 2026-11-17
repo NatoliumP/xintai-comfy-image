@@ -2,3 +2,4 @@
 loras/*.safetensors
 *.log
 __pycache__/
+.excluded/

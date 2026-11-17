@@ -6,11 +6,13 @@ set -euo pipefail
 #   download_models.sh <selector> [comfy_models_dir]
 # Selectors:
 #   core       - RealESRGAN + qwen_image_vae + qwen_3_06b_base (~1.46 GB)
-#   diffusion  - 3x Anima diffusion models (~12.5 GB)
-#   anima      - core + diffusion
+#   turbo      - anima-turbo-v1.1.safetensors (~3.9 GB)
+#   anima-turbo - core + turbo (~5.4 GB)
+#   diffusion  - anima-aesthetic-v1.1 + anima-base-v1.0 (~8.4 GB)
+#   anima      - core + turbo + diffusion
 #   sdxl_ckpt  - NoobAI-XL-v1.1.safetensors (~7.1 GB)
 #   sdxl_cn    - controlnet++_union_sdxl_promax + noobaiXLControlnet_openposeModel (~5.0 GB)
-#   full       - core + diffusion + sdxl_ckpt + sdxl_cn (~26.1 GB)
+#   full       - core + turbo + diffusion + sdxl_ckpt + sdxl_cn (~26.1 GB)
 
 SELECTOR="${1:-anima}"
 TARGET_MODELS_DIR="${2:-/opt/workspace-internal/ComfyUI/models}"
@@ -25,8 +27,11 @@ matches_selector() {
         all|full)
             return 0
             ;;
+        anima-turbo|anima_turbo)
+            [[ "$grp" == "core" || "$grp" == "turbo" ]]
+            ;;
         anima)
-            [[ "$grp" == "core" || "$grp" == "diffusion" ]]
+            [[ "$grp" == "core" || "$grp" == "turbo" || "$grp" == "diffusion" ]]
             ;;
         *)
             [[ "$grp" == "${SELECTOR}" ]]
@@ -45,7 +50,7 @@ download_file() {
     echo "[models] Downloading $(basename "$dest") from ${url}"
     if command -v aria2c >/dev/null 2>&1; then
         aria2c --allow-overwrite=true --auto-file-renaming=false \
-            -x 8 -s 8 -k 4M --retry-wait=3 --max-tries=5 \
+            -x 16 -s 16 -k 4M --retry-wait=3 --max-tries=5 \
             -d "$(dirname "$tmp")" -o "$(basename "$tmp")" "$url"
     else
         curl -fSL --retry 5 --retry-delay 3 -o "$tmp" "$url"

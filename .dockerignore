@@ -1,6 +1,9 @@
 .git
 .github
+.excluded
+docs
 *.md
 *.ps1
+*.yaml
 smoke_test.py
 loras/*.ps1

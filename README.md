@@ -20,7 +20,8 @@
 
 | 参数 | 可选值 | 说明 | 预估成品体积 |
 | --- | --- | --- | --- |
-| `BAKE_MODELS` | `slim` | 仅打入 15 个插件 + LoRA + 工作流；首次启动可用 `FETCH_MODEL_PROFILE=anima\|full` 自动下载模型 | ~11 GB |
+| `BAKE_MODELS` | `slim` | 仅打入 15 个插件 + LoRA + 工作流；首次启动可用 `FETCH_MODEL_PROFILE=anima-turbo\|anima\|full` 自动下载模型 | ~11 GB |
+| `BAKE_MODELS` | `anima-turbo` | 仅内置 `anima-turbo-v1.1` + `qwen_3_06b_base` + `qwen_image_vae` + `RealESRGAN` + LoRA（开机零流量零等待） | ~16 GB |
 | `BAKE_MODELS` | `anima` *(默认)* | 内置 3 个 Anima 底模 (`turbo-v1.1`/`aesthetic-v1.1`/`base-v1.0`) + `qwen_3_06b_base` + `qwen_image_vae` + `RealESRGAN_x4plus_anime_6B` + LoRA | ~22 GB |
 | `BAKE_MODELS` | `full` | 在 `anima` 基础上再内置 `NoobAI-XL-v1.1` (7.1 GB) + 2 个 SDXL ControlNet (5.0 GB)，1:1 完整复刻 | ~34 GB |
 | `LORA_PROFILE` | `all` *(默认)* | `xintai` 原 12 个 LoRA + `xintai_anan` 新增 2 个触手 LoRA（共 14 个，约 1.64 GB） | +1.6 GB |
@@ -51,12 +52,12 @@ GitHub 免费 `ubuntu-latest` runner 清理后可用磁盘约 35–42 GB，工�
 
 ## 4. Vast.ai 运行配置建议
 
-- **Docker Image**: `<your-registry>/xintai-comfy:v0.43.0-anima`
+- **Docker Image**: `ghcr.io/natoliump/xintai-comfy:v0.43.0-cuda13.2-py312-anima-turbo`
 - **Launch Mode**: Run interactive shell / Jupyter + SSH（或默认 Vast entrypoint）
 - **暴露端口**: `8188` (ComfyUI)、`8288` (API Wrapper)、`8080` (Jupyter)、`1111` (Portal)
 - **环境变量**:
   - `COMFYUI_ARGS`: `--disable-auto-launch --disable-xformers --port 18188 --enable-cors-header`（已设默认）
-  - `FETCH_MODEL_PROFILE`: `none`（若用 `slim` 镜像则改为 `anima` 或 `full`；若用 `anima` 镜像想自动补全 NoobAI+ControlNet 也可改为 `full`）
+  - `FETCH_MODEL_PROFILE`: 使用 `anima-turbo` 镜像时保持 **`none`**（模型已在镜像层内，开机零流量零下载）；只有用 `slim` 镜像时才需要设为 `anima-turbo` / `anima` / `full`
 
 ## 5. 本地校验与容器上线测试
 
@@ -65,5 +66,5 @@ GitHub 免费 `ubuntu-latest` runner 清理后可用磁盘约 35–42 GB，工�
 python smoke_test.py --offline --verify-hashes
 
 # 容器启动后线上验收（通过 SSH 转发或内网访问 18188）
-python smoke_test.py --url http://127.0.0.1:18188
+python smoke_test.py --url http://127.0.0.1:18188 --profile anima-turbo
 ```

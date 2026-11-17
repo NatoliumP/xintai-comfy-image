@@ -10,15 +10,16 @@ on:
       image_tag:
         description: "Image tag"
         required: true
-        default: "v0.43.0-cuda13.2-py312-anima"
+        default: "v0.43.0-cuda13.2-py312-anima-turbo"
       bake_models:
         description: "Model baking profile"
         type: choice
         options:
           - slim
+          - anima-turbo
           - anima
           - full
-        default: slim
+        default: anima-turbo
       lora_profile:
         description: "LoRA profile (downloads from release v1-loras if available)"
         type: choice
@@ -33,13 +34,14 @@ on:
         required: false
         default: ""
       default_fetch_profile:
-        description: "Default FETCH_MODEL_PROFILE at boot (use anima or full for slim builds)"
+        description: "Default FETCH_MODEL_PROFILE at boot (use none when models are baked in)"
         type: choice
         options:
           - none
+          - anima-turbo
           - anima
           - full
-        default: anima
+        default: none
 
 jobs:
   build:
